@@ -15,25 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="练习 闰年.c">
+    <ClCompile Include="9的个数.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="霍测试.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="判断素数.c">
+    <ClCompile Include="又加又减.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="乘法口诀表.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="字符串逆序打印.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="计算数的位和 .c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="n的k次方.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
