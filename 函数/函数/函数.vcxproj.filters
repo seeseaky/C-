@@ -36,5 +36,8 @@
     <ClCompile Include="n的k次方.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="数组名的大小于函数内外的区别.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
