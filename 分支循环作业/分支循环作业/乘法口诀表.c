@@ -4,6 +4,7 @@ int main()
 {
 	int i = 0;
 	int a = 0;
+	int cd = 0;
 	for (i = 1; i <= 9; i++)
 	{
 		for (a = i; a <= 9; a++)
