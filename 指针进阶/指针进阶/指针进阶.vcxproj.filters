@@ -18,5 +18,11 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="字符串旋转结果.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="qsort模拟实现冒泡.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
