@@ -1,19 +1,73 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
 #include "contact.h"
 
+//静态版本
+//void InitCnt(CntInfo* c)
+//{
+//	c->sz = 0;
+//	memset(c->contact, 0, sizeof(c->contact));
+//}
+
+//动态版本
 void InitCnt(CntInfo* c)
 {
-	c->sz = 0;
-	memset(c->contact, 0, sizeof(c->contact));
-}
-
-void AddCnt(CntInfo* c)
-{
-	if (c->sz == MAX)
+	c->contact = (Contact*)malloc(sizeof(Contact) * DEF_SZ);
+	if (c->contact == NULL)
 	{
-		printf("通讯录已满，请勿再添加。\n");
+		perror("InitCnt");
 		return;
 	}
+	c->sz = 0;
+	c->cp = DEF_SZ;
+
+}
+//静态版本
+//void AddCnt(CntInfo* c)
+//{
+//	if (c->sz == MAX)
+//	{
+//		printf("通讯录已满，请勿再添加。\n");
+//		return;
+//	}
+//	printf("开始输入联系人信息\n");
+//	printf("请输入姓名：");
+//	scanf("%s", c->contact[c->sz].name);
+//	printf("请输入性别：");
+//	scanf("%s", c->contact[c->sz].sex);
+//	printf("请输入年龄：");
+//	scanf("%d", &(c->contact[c->sz].age));
+//	printf("请输入电话：");
+//	scanf("%s", c->contact[c->sz].tele);
+//	printf("请输入地址：");
+//	scanf("%s", c->contact[c->sz].address);
+//
+//	c->sz++;
+//	printf("添加成功\n");
+//
+//}
+void Check(CntInfo* c)
+{
+	if (c->sz == c->cp)
+	{
+		Contact* ptr = (Contact*)realloc(c->contact, (c->cp + INC_SZ) * sizeof(Contact));
+		if (ptr != NULL)
+		{
+			c->contact = ptr;
+			c->cp += INC_SZ;
+			printf("\n增容成功\n");
+		}
+		else
+		{
+			perror("AddCnt");
+			return;
+		}
+	}
+}
+
+//动态版本
+void AddCnt(CntInfo* c)
+{
+	Check(c);
 	printf("开始输入联系人信息\n");
 	printf("请输入姓名：");
 	scanf("%s", c->contact[c->sz].name);
@@ -155,4 +209,12 @@ void ModifyCnt(CntInfo* c)
 void SortCnt(CntInfo* c)
 {
 	printf("目前没有排序功能");
+}
+
+void DstCnt(CntInfo* c)
+{
+	free(c->contact);
+	c->contact = NULL;
+	c->sz = 0;
+	c->cp = 0;
 }

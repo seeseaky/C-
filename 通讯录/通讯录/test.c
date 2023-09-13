@@ -46,6 +46,7 @@ int main()
 			PrintCnt(&cnt);
 			break;
 		case EXIT:
+			DstCnt(&cnt);
 			printf("ÍË³ö³É¹¦\n");
 			break;
 		default:
